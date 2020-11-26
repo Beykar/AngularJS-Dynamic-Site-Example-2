@@ -6,7 +6,7 @@
         padding-bottom: 5rem;
 
         @include mq($from: desktop){
-            background-image: url(https://sites.ey.com/sites/EMEIAFSOLearningEvents/insuranceshowcase/SiteAssets/test-web-assets/assets/img/home-banner.png);
+            background-image: url(siteUrl/SiteAssets/test-web-assets/assets/img/home-banner.png);
             background-size: 70%;
             background-position:right;
             background-repeat: no-repeat;

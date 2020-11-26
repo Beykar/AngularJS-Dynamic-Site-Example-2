@@ -6,7 +6,7 @@
 issApp.factory('sessionsData', function($http){
 	return {
 		getSessionsData: function(){
-	    	return $http.get("https://sites.ey.com/sites/EMEIAFSOLearningEvents/insuranceshowcase/_api/web/lists/getByTitle('Lst_Sessions')/items?$select=*", { 
+	    	return $http.get("siteUrl/_api/web/lists/getByTitle('Lst_Sessions')/items?$select=*", { 
 				headers: { "Accept": "application/json;odata=verbose" }
 			})
 			.then(function(response) {
@@ -15,7 +15,7 @@ issApp.factory('sessionsData', function($http){
         },
         
         getFacilitatorsData: function(){
-            return $http.get("https://sites.ey.com/sites/EMEIAFSOLearningEvents/insuranceshowcase/_api/web/lists/getByTitle('Lst_Facilitators')/items?$select=*", { 
+            return $http.get("siteUrl/_api/web/lists/getByTitle('Lst_Facilitators')/items?$select=*", { 
 				headers: { "Accept": "application/json;odata=verbose" }
 			})
 			.then(function(response) {

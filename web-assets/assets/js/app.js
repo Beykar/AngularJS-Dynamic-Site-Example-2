@@ -56,31 +56,31 @@ issApp.config(['$locationProvider', function($locationProvider){
 
     .state('/',{
         url: "/SitePages/Index.aspx",
-        templateUrl: "https://sites.ey.com/sites/EMEIAFSOLearningEvents/insuranceshowcase/SiteAssets/web-assets/assets/js/partials/homePartial.html?c=" + appCacheVersion
+        templateUrl: "siteUrl/SiteAssets/web-assets/assets/js/partials/homePartial.html?c=" + appCacheVersion
     })
     .state('home', {
         url: "/SitePages/Index.aspx/home",
-        templateUrl: "https://sites.ey.com/sites/EMEIAFSOLearningEvents/insuranceshowcase/SiteAssets/web-assets/assets/js/partials/homePartial.html?c=" + appCacheVersion
+        templateUrl: "siteUrl/SiteAssets/web-assets/assets/js/partials/homePartial.html?c=" + appCacheVersion
     })
     .state('overview', {
       url: "/SitePages/Index.aspx/overview/:week",
-      templateUrl: "https://sites.ey.com/sites/EMEIAFSOLearningEvents/insuranceshowcase/SiteAssets/web-assets/assets/js/partials/overviewPartial.html?c=" + appCacheVersion
+      templateUrl: "siteUrl/SiteAssets/web-assets/assets/js/partials/overviewPartial.html?c=" + appCacheVersion
     })
     .state('faqs', {
       url: "/SitePages/Index.aspx/faqs",
-      templateUrl: "https://sites.ey.com/sites/EMEIAFSOLearningEvents/insuranceshowcase/SiteAssets/web-assets/assets/js/partials/faqsPartial.html?c=" + appCacheVersion
+      templateUrl: "siteUrl/SiteAssets/web-assets/assets/js/partials/faqsPartial.html?c=" + appCacheVersion
     })
     .state('about-event', {
       url: "/SitePages/Index.aspx/about-the-event",
-      templateUrl: "https://sites.ey.com/sites/EMEIAFSOLearningEvents/insuranceshowcase/SiteAssets/web-assets/assets/js/partials/aboutPartial.html?c=" + appCacheVersion
+      templateUrl: "siteUrl/SiteAssets/web-assets/assets/js/partials/aboutPartial.html?c=" + appCacheVersion
     })
     .state('resources', {
       url: "/SitePages/Index.aspx/about-the-event",
-      templateUrl: "https://sites.ey.com/sites/EMEIAFSOLearningEvents/insuranceshowcase/SiteAssets/web-assets/assets/js/partials/resourcesPartial.html?c=" + appCacheVersion
+      templateUrl: "siteUrl/SiteAssets/web-assets/assets/js/partials/resourcesPartial.html?c=" + appCacheVersion
     })
     .state('network-channel', {
       url: "/SitePages/Index.aspx/network-channel",
-      templateUrl: "https://sites.ey.com/sites/EMEIAFSOLearningEvents/insuranceshowcase/SiteAssets/web-assets/assets/js/partials/networkPartial.html?c=" + appCacheVersion
+      templateUrl: "siteUrl/SiteAssets/web-assets/assets/js/partials/networkPartial.html?c=" + appCacheVersion
     })
  
     $urlRouterProvider.otherwise("/SitePages/Index.aspx/home");

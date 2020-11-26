@@ -28,10 +28,10 @@
                             </li>
                             <li ng-if="session.CalendarLink != null" class="iss__section-desc-header-list--item">
                                 <a href="{{session.CalendarLink}}" target="_blank" class="iss__calendar-section-link">
-                                <img src="https://sites.ey.com/sites/EMEIAFSOLearningEvents/insuranceshowcase/SiteAssets/web-assets/assets/img/calendar.png" alt="" class="iss__calendar-section-icon">Add to calendar<i class="fa fa-angle-right fa-2x  iss__angle-right-overview-top" aria-hidden="true"></i></a></li>
+                                <img src="siteUrl/SiteAssets/web-assets/assets/img/calendar.png" alt="" class="iss__calendar-section-icon">Add to calendar<i class="fa fa-angle-right fa-2x  iss__angle-right-overview-top" aria-hidden="true"></i></a></li>
                             <li ng-if="session.VideoLink != null" class="iss__section-desc-header-list--item">
                                 <a href="{{session.VideoLink}}" target="_blank" class="iss__calendar-section-link">
-                                <img src="https://sites.ey.com/sites/EMEIAFSOLearningEvents/insuranceshowcase/SiteAssets/web-assets/assets/img/video.png" alt="" class="iss__calendar-section-icon">Join the session<i class="fa fa-angle-right fa-2x  iss__angle-right-overview-top" aria-hidden="true"></i></a></li>
+                                <img src="siteUrl/SiteAssets/web-assets/assets/img/video.png" alt="" class="iss__calendar-section-icon">Join the session<i class="fa fa-angle-right fa-2x  iss__angle-right-overview-top" aria-hidden="true"></i></a></li>
                             </li>
                         </ul>
                     </div>
@@ -40,7 +40,7 @@
                     <ul class="iss__session-details-list">
                         <li ng-if="session.FacilitatorsDetails.length != 0" class="iss__session-details-list--item iss__speaker-list-item">
                             <a ng-click="showFacilitators(session.Name, session.FacilitatorsDetails)" class="iss__session-details-link iss__facilitator-link" popup>
-                            <img src="https://sites.ey.com/sites/EMEIAFSOLearningEvents/insuranceshowcase/SiteAssets/web-assets/assets/img/user.png" alt="" class="iss__calendar-section-icon iss__session-speaker-icon">
+                            <img src="siteUrl/SiteAssets/web-assets/assets/img/user.png" alt="" class="iss__calendar-section-icon iss__session-speaker-icon">
                             <span class="iss__session-span">Facilitators</span>
                             <span class="iss__session-span-hover">View facilitators</span>
                             <i class="fa fa-angle-right fa-2x  iss__angle-right-overview-bottom" aria-hidden="true"></i>
@@ -48,7 +48,7 @@
                         </li>
                         <li ng-if="session.KeyTakeaways != null" class="iss__session-details-list--item iss__resource-list-item">
                             <a ng-click="showTakeaways(session.Name, session.KeyTakeaways)" class="iss__session-details-link iss__takeway-link" popup>
-                            <img src="https://sites.ey.com/sites/EMEIAFSOLearningEvents/insuranceshowcase/SiteAssets/web-assets/assets/img/target.png" alt="" class="iss__calendar-section-icon iss__session-takeaway-icon">
+                            <img src="siteUrl/SiteAssets/web-assets/assets/img/target.png" alt="" class="iss__calendar-section-icon iss__session-takeaway-icon">
                             <span class="iss__session-span">Key takeaways</span>
                             <span class="iss__session-span-hover">View key takeaways</span>
                             <i class="fa fa-angle-right fa-2x  iss__angle-right-overview-bottom" aria-hidden="true"></i>
@@ -56,7 +56,7 @@
                         </li>  
                         <li ng-if="session.Resources != null" class="iss__session-details-list--item iss__resource-list-item">
                             <a ng-click="showResources(session.Name, session.Resources)" class="iss__session-details-link iss__resources-link" popup>
-                            <img src="https://sites.ey.com/sites/EMEIAFSOLearningEvents/insuranceshowcase/SiteAssets/web-assets/assets/img/folder.png" alt="" class="iss__calendar-section-icon iss__session-resource-icon">
+                            <img src="siteUrl/SiteAssets/web-assets/assets/img/folder.png" alt="" class="iss__calendar-section-icon iss__session-resource-icon">
                             <span class="iss__session-span">Resources</span>
                             <span class="iss__session-span-hover">View resources</span>
                             <i class="fa fa-angle-right fa-2x  iss__angle-right-overview-bottom" aria-h idden="true"></i></a>
@@ -68,7 +68,7 @@
     </section>
     <div class="iss__popup-cont iss__popup-facilitators" popup>
         <a href="" class="iss__popup-close-link">
-            <img src="https://sites.ey.com/sites/EMEIAFSOLearningEvents/insuranceshowcase/SiteAssets/web-assets/assets/img/close-icon.png" alt="" class="iss__popup-close-icon">
+            <img src="siteUrl/SiteAssets/web-assets/assets/img/close-icon.png" alt="" class="iss__popup-close-icon">
         </a>
         <div class="iss__popup-para">
             <h2 class="iss__overview-popup-header">{{sessionName}}</h2>
@@ -87,7 +87,7 @@
                 <div class="iss__facilitators-tab-pane tab-pane fade show" ng-repeat="facilitator in speakerArr" id="tab-content-{{facilitator.ID}}" show-pane>
                         <div class="iss__facilitators-tap-pane-para">
                             <div class="iss__facilitators-img-cont">
-                                <img ng-if="facilitator.Image == null" src="https://sites.ey.com/sites/EMEIAFSOLearningEvents/insuranceshowcase/SiteAssets/web-assets/assets/img/silhouette.png" alt="" class="iss__facilitator-img">
+                                <img ng-if="facilitator.Image == null" src="siteUrl/SiteAssets/web-assets/assets/img/silhouette.png" alt="" class="iss__facilitator-img">
                                 <img src="{{facilitator.Image}}" alt="" class="iss__facilitator-img">
                             </div>                        
                             <div class="iss__facilitator-bio" ng-bind-html="facilitator.Bio">
@@ -99,7 +99,7 @@
     </div>
     <div class="iss__popup-cont iss__popup-takeway" popup>
         <a href="" class="iss__popup-close-link">
-            <img src="https://sites.ey.com/sites/EMEIAFSOLearningEvents/insuranceshowcase/SiteAssets/web-assets/assets/img/close-icon.png" alt="" class="iss__popup-close-icon">
+            <img src="siteUrl/SiteAssets/web-assets/assets/img/close-icon.png" alt="" class="iss__popup-close-icon">
         </a>
         <div class="iss__popup-para">
             <h2 class="iss__overview-popup-header">{{sessionName}}</h2>
@@ -110,7 +110,7 @@
     </div>
     <div class="iss__popup-cont iss__popup-resources" popup>
         <a href="" class="iss__popup-close-link">
-            <img src="https://sites.ey.com/sites/EMEIAFSOLearningEvents/insuranceshowcase/SiteAssets/web-assets/assets/img/close-icon.png" alt="" class="iss__popup-close-icon">
+            <img src="siteUrl/SiteAssets/web-assets/assets/img/close-icon.png" alt="" class="iss__popup-close-icon">
         </a>
         <div class="iss__popup-para">
             <h2 class="iss__overview-popup-header">{{sessionName}}</h2>
