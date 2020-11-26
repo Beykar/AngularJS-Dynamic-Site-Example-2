@@ -1,0 +1,20 @@
+<div class="iss__home-wrapper" ng-controller="homeCtrl">
+    <section class="iss__home-hero-section">
+        <div class="iss__home-hero-overlay"></div>
+        <div class="iss__home-hero-cont iss_overview-hero-cont">
+            <h1 class="iss__home-hero-header">{{aboutData.Title}}</h1>
+            <div class="iss_home-hero-para">
+                <div class="iss__home-hero-intro" ng-bind-html="aboutData.IntroMessage">
+                </div>
+                <a href="" class="iss__home-readmore" popup>Read more...</a>
+            </div>
+        </div>       
+    </section>
+    <div class="iss__popup-cont" popup>
+        <a href="" class="iss__popup-close-link">
+            <img src="https://sites.ey.com/sites/EMEIAFSOLearningEvents/insuranceshowcase/SiteAssets/web-assets/assets/img/close-icon.png" alt="" class="iss__popup-close-icon">
+        </a>
+        <div class="iss__popup-para" ng-bind-html="$sce.trustAsHtml(aboutData.FullMessage)">
+        </div>
+    </div> 
+</div>

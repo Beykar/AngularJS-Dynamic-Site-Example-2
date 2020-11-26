@@ -1,0 +1,145 @@
+<base href="https://sites.ey.com/sites/EMEIAFSOLearningEvents/insuranceshowcase/">
+
+<!-- Custom Meta tag -->
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes"> 
+
+<!-- Custom CSS -->
+<link rel="stylesheet" href="https://sites.ey.com/sites/EMEIAFSOLearningEvents/insuranceshowcase/SiteAssets/web-assets/assets/css/style.css" type="text/css"> 
+
+
+
+<div id="iss__main-wrapper" ng-app="issApp">
+    <header ng-controller="headerCtrl">
+        <div class="iss__main-nav">
+            <div class="iss__main-logo-cont">
+                <a ui-sref="home" title="" class="iss__main-logo-link">
+                    <img src="https://sites.ey.com/sites/EMEIAFSOLearningEvents/insuranceshowcase/SiteAssets/web-assets/assets/img/EY_Logo-inline.png?csf=1&web=1&e=RXH7v9" alt="EY - Building a better working world" class="img-responsive iss__main-logo"/>
+                </a>     
+            </div>
+            <div class="iss__ticker-cont">
+                <div class="newsTicker news-ticker-mobile">
+                     <p class="iss__link-cont">
+                        <span ng-repeat="item in linksArr | orderBy :'Order'" class="iss__promoted-span">
+                            <a class="iss__promoted-link {{item.Class}}" href="{{item.Link}}" target="_blank">{{item.Name}}</a>
+                        </span> 
+                    </p>
+                </div>                
+                <div class="newsTicker news-ticker-desktop">
+                     <p class="iss__link-cont">
+                        <span ng-repeat="item in linksArr | orderBy :'Order'" class="iss__promoted-span">
+                            <a class="iss__promoted-link {{item.Class}}" href="{{item.Link}}" target="_blank">{{item.Name}}</a>
+                        </span> 
+                    </p>
+                </div>                
+            </div>
+            <div class="dropdown iss__yammer-dropdown">
+                <a class="btn dropdown-toggle iss__yammer-img-link" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <img src="https://sites.ey.com/sites/EMEIAFSOLearningEvents/insuranceshowcase/SiteAssets/web-assets/assets/img/yammer.png" alt="" class="iss_yammer-img">
+                </a>                  
+                <div class="dropdown-menu iss__dropdown-menu" aria-labelledby="dropdownMenuLink">
+                    <a ng-repeat="yammer in yammerArr" class="dropdown-item iss__yammer-link" href="{{yammer.Link}}" target="_blank">{{yammer.Name}}</a>
+                </div>
+            </div>
+        </div>
+        <div class="iss__nav-cont iss__main-nav">
+            <ul class="iss__nav-list">
+                <li class="iss__nav-list--item"><a ui-sref="home" class="iss__nav-link">Home</a></li>
+                <li class="iss__nav-list--item"><a ui-sref="about-event" class="iss__nav-link">About the event</a></li>
+                <li class="iss__nav-list--item"><a ui-sref="overview({week: 'week 1'})" class="iss__nav-link">Week 1 overview</a></li>
+                <li class="iss__nav-list--item"><a ui-sref="overview({week: 'week 2'})" class="iss__nav-link">Week 2 overview</a></li>
+                <li class="iss__nav-list--item"><a ui-sref="resources" class="iss__nav-link">Resources</a></li>
+                <li class="iss__nav-list--item"><a ui-sref="network-channel" class="iss__nav-link">Network Channel</a></li>
+                <li class="iss__nav-list--item">
+                    <a id="iss__help-nav-link" class="iss__nav-link iss__nav-help-item">Help</a>
+                    <ul id="iss__sub-nav-list" class="iss__sub-nav-list">
+                        <li class="iss__sub-nav-list--item">
+                            <a ui-sref="faqs" class="iss__sub-nav-link">FAQs</a>
+                        </li>
+                        <li class="iss__sub-nav-list--item">
+                            <a href="mailto:emeia.fso.learning@nl.ey.com?subject=Insurance showcase query" class="iss__sub-nav-link">Contact us</a>
+                        </li>
+                    </ul>                    
+                </li>
+            </ul>
+            <a href="https://forms.office.com/Pages/ResponsePage.aspx?id=mT-XW99360uyfaoMcLhILDB1djljYHhLu_nTStKpLWdUQ1lFQ0gyM1Q3N0FLSFlYNkZFMzQ0SFlMVi4u" target="_blank" class="iss_home-register-button iss__home-register-desktop">           
+                <div class="iss__home-register-cont">
+                    Register for sessions
+                </div>
+            </a>    
+            <!-- <a href="" class="iss__nav-link iss__yammer-link"><img src="https://sites.ey.com/sites/EMEIAFSOLearningEvents/insuranceshowcase/SiteAssets/web-assets/assets/img/yammer.png" alt="" class="iss__yammer-img"></a> -->
+            <div class="iss__ham-menu-cont" menu-popout>
+                <nav class="iss__ham-menu-toggle-cont">
+                <a href="" class="iss__ham-menu-toggle--tablet" id="menuToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </a>
+                <div class="iss__popout-menu">
+                    <ul class="iss__main-nav-list" active-nav>
+                        <li class="iss__main-nav-listitem">
+                            <a ui-sref="home" ui-sref-active="" class="iss__main-nav-anchor">Home</a>
+                        </li>
+                        <li class="iss__main-nav-listitem"><a ui-sref="about-event" class="iss__main-nav-anchor">About the event</a></li>
+                        <li class="iss__main-nav-listitem">
+                            <a ui-sref="overview({week: 'week 1'})" ui-sref-active="" class="iss__main-nav-anchor">Week 1 overview</a>
+                        </li>
+                        <li class="iss__main-nav-listitem">
+                            <a ui-sref="overview({week: 'week 2'})" ui-sref-active="" class="iss__main-nav-anchor">Week 2 overview</a>
+                        </li>
+                        <li class="iss__main-nav-listitem"><a ui-sref="resources" class="iss__main-nav-anchor">Resources</a></li>
+                        <li class="iss__main-nav-listitem"><a ui-sref="network-channel" class="iss__main-nav-anchor">Network Channel</a></li>
+                        <li class="iss__main-nav-listitem">
+                            <a ui-sref="faqs" ui-sref-active="" class="iss__main-nav-anchor">FAQs</a>
+                        </li>
+                        <li class="iss__main-nav-listitem">
+                            <a href="mailto:emeia.fso.learning@nl.ey.com?subject=Insurance showcase query" ui-sref-active="" class="iss__main-nav-anchor">Contact us</a>
+                        </li>
+                    </ul> 
+                </div> 
+                </nav>
+            </div>       
+        </div>
+    </header>
+	<main class="iss__main-wrapper">
+        <a href="https://forms.office.com/Pages/ResponsePage.aspx?id=mT-XW99360uyfaoMcLhILDB1djljYHhLu_nTStKpLWdUQ1lFQ0gyM1Q3N0FLSFlYNkZFMzQ0SFlMVi4u" target="_blank" class="iss_home-register-button iss__register-button-mobile">           
+                <div class="iss__home-register-cont">
+                    Register for sessions
+                </div>
+            </a>
+		<ui-view></ui-view>
+    </main>
+    <!-- Vendors -->
+    <script src="https://sites.ey.com/sites/EMEIAFSOLearningEvents/insuranceshowcase/SiteAssets/web-assets/assets/js/vendors/angular.min.js"></script>
+    <script src="https://sites.ey.com/sites/EMEIAFSOLearningEvents/insuranceshowcase/SiteAssets/web-assets/assets/js/vendors/angular-animate.js"></script>	
+    <script src="https://sites.ey.com/sites/EMEIAFSOLearningEvents/insuranceshowcase/SiteAssets/web-assets/assets/js/vendors/ui-bootstrap-tpls-2.5.0.min.js"></script>
+    <script src="https://sites.ey.com/sites/EMEIAFSOLearningEvents/insuranceshowcase/SiteAssets/web-assets/assets/js/vendors/jquery.min.js"></script>
+    <script src="https://sites.ey.com/sites/EMEIAFSOLearningEvents/insuranceshowcase/SiteAssets/web-assets/assets/js/vendors/popper.min.js"></script>
+    <script src="https://sites.ey.com/sites/EMEIAFSOLearningEvents/insuranceshowcase/SiteAssets/web-assets/assets/js/vendors/bootstrap.min.js"></script>
+    <script src="https://use.fontawesome.com/7afb12a081.js?001"></script>
+
+    <!-- App -->
+	<script src="https://sites.ey.com/sites/EMEIAFSOLearningEvents/insuranceshowcase/SiteAssets/web-assets/assets/js/app.js"></script>
+
+	<!-- Factories -->
+    <script src="https://sites.ey.com/sites/EMEIAFSOLearningEvents/insuranceshowcase/SiteAssets/web-assets/assets/js/factory/headerFactory.js"></script>
+    <script src="https://sites.ey.com/sites/EMEIAFSOLearningEvents/insuranceshowcase/SiteAssets/web-assets/assets/js/factory/introFactory.js"></script>
+    <script src="https://sites.ey.com/sites/EMEIAFSOLearningEvents/insuranceshowcase/SiteAssets/web-assets/assets/js/factory/sessionsFactory.js"></script>
+    <script src="https://sites.ey.com/sites/EMEIAFSOLearningEvents/insuranceshowcase/SiteAssets/web-assets/assets/js/factory/faqsFactory.js"></script>
+    <script src="https://sites.ey.com/sites/EMEIAFSOLearningEvents/insuranceshowcase/SiteAssets/web-assets/assets/js/factory/networkFactory.js"></script>
+
+   
+    <!-- Controllers -->
+    <script src="https://sites.ey.com/sites/EMEIAFSOLearningEvents/insuranceshowcase/SiteAssets/web-assets/assets/js/controllers/headerCtrl.js"></script>
+    <script src="https://sites.ey.com/sites/EMEIAFSOLearningEvents/insuranceshowcase/SiteAssets/web-assets/assets/js/controllers/homeCtrl.js"></script>
+    <script src="https://sites.ey.com/sites/EMEIAFSOLearningEvents/insuranceshowcase/SiteAssets/web-assets/assets/js/controllers/overviewCtrl.js"></script>
+    <script src="https://sites.ey.com/sites/EMEIAFSOLearningEvents/insuranceshowcase/SiteAssets/web-assets/assets/js/controllers/faqsCtrl.js"></script>
+    <script src="https://sites.ey.com/sites/EMEIAFSOLearningEvents/insuranceshowcase/SiteAssets/web-assets/assets/js/controllers/networkCtrl.js"></script>
+    
+
+
+    <!-- Directives -->
+    <script src="https://sites.ey.com/sites/EMEIAFSOLearningEvents/insuranceshowcase/SiteAssets/web-assets/assets/js/directives/menuDir.js"></script>
+    <script src="https://sites.ey.com/sites/EMEIAFSOLearningEvents/insuranceshowcase/SiteAssets/web-assets/assets/js/directives/variousDir.js"></script>
+    <!-- <script src="https://sites.ey.com/sites/EMEIAFSOLearningEvents/insuranceshowcase/SiteAssets/web-assets/assets/js/directives/popupDir.js"></script> -->
+</div>

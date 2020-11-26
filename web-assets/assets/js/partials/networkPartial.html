@@ -1,0 +1,403 @@
+<div class="iss__home-wrapper" ng-controller="networkCtrl">
+    <section class="iss__home-hero-section iss__network-hero-section">
+        <div class="iss__home-hero-overlay"></div>
+        <div class="iss__home-hero-cont iss_overview-hero-cont">
+            <h1 class="iss__home-hero-header">Network Channel</h1>
+            <div class="iss_home-hero-para">
+                <div class="iss__home-hero-intro">
+                    Find other participants by using the filters below:
+                </div>
+            </div>
+        </div>
+        <div class="iss__network-filter-cont">
+            <div class="accordion iss__network-accordion" id="networkChannelAccordion">
+                <div class="card iss__network-card">
+                  <div class="card-header iss__network-card--header-cont" id="headingOne">
+                    <h2 class="mb-0 iss__network-card--header">
+                      <a class="btn btn-link btn-block text-left iss__network-card--link" type="button" data-toggle="collapse" data-target="#collapseOnes" aria-expanded="true" aria-controls="collapseOnes" rotate>
+                        <p class="iss__network-card-title">by Country</p>                        
+                        <i class="fa fa-angle-right iss__network-angle-right rotated" aria-hidden="true"></i>
+                      </a>
+                    </h2>
+                  </div>              
+                  <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#networkChannelAccordion">
+                    <div class="card-body iss__network-card-body">
+                        <div class="input-group mb-3 iss__network-input-group--country" ng-repeat="country in countriesArr | orderBy">
+                            <div class="input-group-prepend iss__network-input-group-prepend">
+                              <div class="input-group-text iss__network-input-group-text">
+                                <input class="iss__network-input checkbox" type="checkbox" aria-label="Checkbox for following text input" ng-click="addFilterCountry(country)">
+                              </div>
+                            </div>
+                            <span class="iss__network-filter-span">{{country}}</span>
+                        </div>
+                        <!-- <div class="input-group mb-3 iss__network-input-group">
+                            <div class="input-group-prepend iss__network-input-group-prepend">
+                              <div class="input-group-text iss__network-input-group-text">
+                                <input class="iss__network-input" type="checkbox" aria-label="Checkbox for following text input">
+                              </div>
+                            </div>
+                            <span class="iss__network-filter-span">country</span>
+                        </div>
+                        <div class="input-group mb-3 iss__network-input-group">
+                            <div class="input-group-prepend iss__network-input-group-prepend">
+                              <div class="input-group-text iss__network-input-group-text">
+                                <input class="iss__network-input" type="checkbox" aria-label="Checkbox for following text input">
+                              </div>
+                            </div>
+                            <span class="iss__network-filter-span">country</span>
+                        </div>
+                        <div class="input-group mb-3 iss__network-input-group">
+                            <div class="input-group-prepend iss__network-input-group-prepend">
+                              <div class="input-group-text iss__network-input-group-text">
+                                <input class="iss__network-input" type="checkbox" aria-label="Checkbox for following text input">
+                              </div>
+                            </div>
+                            <span class="iss__network-filter-span">country</span>
+                        </div>
+                        <div class="input-group mb-3 iss__network-input-group">
+                            <div class="input-group-prepend iss__network-input-group-prepend">
+                              <div class="input-group-text iss__network-input-group-text">
+                                <input class="iss__network-input" type="checkbox" aria-label="Checkbox for following text input">
+                              </div>
+                            </div>
+                            <span class="iss__network-filter-span">country</span>
+                        </div>
+                        <div class="input-group mb-3 iss__network-input-group">
+                            <div class="input-group-prepend iss__network-input-group-prepend">
+                              <div class="input-group-text iss__network-input-group-text">
+                                <input class="iss__network-input" type="checkbox" aria-label="Checkbox for following text input">
+                              </div>
+                            </div>
+                            <span class="iss__network-filter-span">country</span>
+                        </div>
+                        <div class="input-group mb-3 iss__network-input-group">
+                            <div class="input-group-prepend iss__network-input-group-prepend">
+                              <div class="input-group-text iss__network-input-group-text">
+                                <input class="iss__network-input" type="checkbox" aria-label="Checkbox for following text input">
+                              </div>
+                            </div>
+                            <span class="iss__network-filter-span">country</span>
+                        </div>
+                        <div class="input-group mb-3 iss__network-input-group">
+                            <div class="input-group-prepend iss__network-input-group-prepend">
+                              <div class="input-group-text iss__network-input-group-text">
+                                <input class="iss__network-input" type="checkbox" aria-label="Checkbox for following text input">
+                              </div>
+                            </div>
+                            <span class="iss__network-filter-span">country</span>
+                        </div>
+                        <div class="input-group mb-3 iss__network-input-group">
+                            <div class="input-group-prepend iss__network-input-group-prepend">
+                              <div class="input-group-text iss__network-input-group-text">
+                                <input class="iss__network-input" type="checkbox" aria-label="Checkbox for following text input">
+                              </div>
+                            </div>
+                            <span class="iss__network-filter-span">country</span>
+                        </div>
+                        <div class="input-group mb-3 iss__network-input-group">
+                            <div class="input-group-prepend iss__network-input-group-prepend">
+                              <div class="input-group-text iss__network-input-group-text">
+                                <input class="iss__network-input" type="checkbox" aria-label="Checkbox for following text input">
+                              </div>
+                            </div>
+                            <span class="iss__network-filter-span">country</span>
+                        </div>
+                        <div class="input-group mb-3 iss__network-input-group">
+                            <div class="input-group-prepend iss__network-input-group-prepend">
+                              <div class="input-group-text iss__network-input-group-text">
+                                <input class="iss__network-input" type="checkbox" aria-label="Checkbox for following text input">
+                              </div>
+                            </div>
+                            <span class="iss__network-filter-span">country</span>
+                        </div>
+                        <div class="input-group mb-3 iss__network-input-group">
+                            <div class="input-group-prepend iss__network-input-group-prepend">
+                              <div class="input-group-text iss__network-input-group-text">
+                                <input class="iss__network-input" type="checkbox" aria-label="Checkbox for following text input">
+                              </div>
+                            </div>
+                            <span class="iss__network-filter-span">country</span>
+                        </div> -->
+                    </div>
+                  </div>
+                </div>
+                <div class="card iss__network-card">
+                    <div class="card-header iss__network-card--header-cont" id="headingTwo">
+                      <h2 class="mb-0 iss__network-card--header">
+                        <a class="btn btn-link btn-block text-left iss__network-card--link" type="button" data-toggle="collapse" data-target="#collapseTwos" aria-expanded="true" aria-controls="collapseTwos" rotate>
+                          <p class="iss__network-card-title">by Service line</p>                          
+                          <i class="fa fa-angle-right iss__network-angle-right rotated" aria-hidden="true"></i>
+                        </a>
+                      </h2>
+                    </div>                
+                    <div id="collapseTwo" class="collapse show" aria-labelledby="headingTwo" data-parent="#networkChannelAccordion">
+                      <div class="card-body iss__network-card-body">
+                          <div class="input-group mb-3 iss__network-input-group--country" ng-repeat="serviceLine in serviceLineArr | orderBy">
+                              <div class="input-group-prepend iss__network-input-group-prepend">
+                                <div class="input-group-text iss__network-input-group-text">
+                                  <input class="iss__network-input" type="checkbox" aria-label="Checkbox for following text input" ng-click="addFilterService(serviceLine)">
+                                </div>
+                              </div>
+                              <span class="iss__network-filter-span">{{serviceLine}}</span>
+                          </div>
+                          <!-- <div class="input-group mb-3 iss__network-input-group">
+                              <div class="input-group-prepend iss__network-input-group-prepend">
+                                <div class="input-group-text iss__network-input-group-text">
+                                  <input class="iss__network-input" type="checkbox" aria-label="Checkbox for following text input">
+                                </div>
+                              </div>
+                              <span class="iss__network-filter-span">Service line</span>
+                          </div>
+                          <div class="input-group mb-3 iss__network-input-group">
+                              <div class="input-group-prepend iss__network-input-group-prepend">
+                                <div class="input-group-text iss__network-input-group-text">
+                                  <input class="iss__network-input" type="checkbox" aria-label="Checkbox for following text input">
+                                </div>
+                              </div>
+                              <span class="iss__network-filter-span">Service line</span>
+                          </div>
+                          <div class="input-group mb-3 iss__network-input-group">
+                              <div class="input-group-prepend iss__network-input-group-prepend">
+                                <div class="input-group-text iss__network-input-group-text">
+                                  <input class="iss__network-input" type="checkbox" aria-label="Checkbox for following text input">
+                                </div>
+                              </div>
+                              <span class="iss__network-filter-span">Service line</span>
+                          </div>
+                          <div class="input-group mb-3 iss__network-input-group">
+                              <div class="input-group-prepend iss__network-input-group-prepend">
+                                <div class="input-group-text iss__network-input-group-text">
+                                  <input class="iss__network-input" type="checkbox" aria-label="Checkbox for following text input">
+                                </div>
+                              </div>
+                              <span class="iss__network-filter-span">Service line</span>
+                          </div>
+                          <div class="input-group mb-3 iss__network-input-group">
+                              <div class="input-group-prepend iss__network-input-group-prepend">
+                                <div class="input-group-text iss__network-input-group-text">
+                                  <input class="iss__network-input" type="checkbox" aria-label="Checkbox for following text input">
+                                </div>
+                              </div>
+                              <span class="iss__network-filter-span">Service line</span>
+                          </div> -->
+                      </div>
+                    </div>
+                </div>
+                <div class="card iss__network-card">
+                    <div class="card-header iss__network-card--header-cont" id="headingThree">
+                        <h2 class="mb-0 iss__network-card--header">
+                        <a class="btn btn-link btn-block text-left iss__network-card--link" type="button" data-toggle="collapse" data-target="#collapseThrees" aria-expanded="true" aria-controls="collapseThrees" rotate>
+                            <p class="iss__network-card-title">by Rank</p>
+                            <i class="fa fa-angle-right iss__network-angle-right rotated" aria-hidden="true"></i>
+                        </a>
+                        </h2>
+                    </div>            
+                    <div id="collapseThree" class="collapse show" aria-labelledby="headingThree" data-parent="#networkChannelAccordion">
+                        <div class="card-body iss__network-card-body">
+                            <div class="input-group mb-3 iss__network-input-group--rank" ng-repeat="rank in rankArr | orderBy">
+                                <div class="input-group-prepend iss__network-input-group-prepend">
+                                <div class="input-group-text iss__network-input-group-text">
+                                    <input class="iss__network-input" type="checkbox" aria-label="Checkbox for following text input" ng-click="addFilterRank(rank)">
+                                </div>
+                                </div>
+                                <span class="iss__network-filter-span">{{rank}}</span>
+                            </div>
+                            <!-- <div class="input-group mb-3 iss__network-input-group">
+                                <div class="input-group-prepend iss__network-input-group-prepend">
+                                <div class="input-group-text iss__network-input-group-text">
+                                    <input class="iss__network-input" type="checkbox" aria-label="Checkbox for following text input">
+                                </div>
+                                </div>
+                                <span class="iss__network-filter-span">rank</span>
+                            </div>
+                            <div class="input-group mb-3 iss__network-input-group">
+                                <div class="input-group-prepend iss__network-input-group-prepend">
+                                <div class="input-group-text iss__network-input-group-text">
+                                    <input class="iss__network-input" type="checkbox" aria-label="Checkbox for following text input">
+                                </div>
+                                </div>
+                                <span class="iss__network-filter-span">rank</span>
+                            </div>
+                            <div class="input-group mb-3 iss__network-input-group">
+                                <div class="input-group-prepend iss__network-input-group-prepend">
+                                <div class="input-group-text iss__network-input-group-text">
+                                    <input class="iss__network-input" type="checkbox" aria-label="Checkbox for following text input">
+                                </div>
+                                </div>
+                                <span class="iss__network-filter-span">rank</span>
+                            </div>
+                            <div class="input-group mb-3 iss__network-input-group">
+                                <div class="input-group-prepend iss__network-input-group-prepend">
+                                <div class="input-group-text iss__network-input-group-text">
+                                    <input class="iss__network-input" type="checkbox" aria-label="Checkbox for following text input">
+                                </div>
+                                </div>
+                                <span class="iss__network-filter-span">rank</span>
+                            </div> -->
+                        </div>
+                    </div>
+                </div>               
+            </div>
+            <div class="iss__network-search-cont">
+                <a href="" class="iss__network-search-btn iss__home-readmore" popup ng-click="search()">       
+                        Search
+                </a>
+            </div>
+        </div>       
+    </section>
+    <div class="iss__popup-cont iss__network-popup-cont" popup>
+        <a href="" class="iss__popup-close-link">
+            <img src="https://sites.ey.com/sites/EMEIAFSOLearningEvents/insuranceshowcase/SiteAssets/test-web-assets/assets/img/close-icon.png" alt="" class="iss__popup-close-icon">
+        </a>
+        <div class="iss__popup-para">
+          <div class="iss__home-hero-cont iss_overview-hero-cont">
+            <h1 class="iss__home-hero-header">Network Channel</h1>
+            <div class="iss_home-hero-para">
+                <div class="iss__home-hero-intro iss__network-hero-intro" ng-if="searchResultsArr.length == 0">0 search results containing the following:
+                  <ul class="iss__network-filter-list mt-3">
+                    <li class="iss__network-filter-list--item" ng-repeat="countryFilter in countryFilterArr">{{countryFilter}}</li>
+                    <li class="iss__network-filter-list--item" ng-repeat="serviceFilter in serviceFilterArr">{{serviceFilter}}</li>
+                    <li class="iss__network-filter-list--item" ng-repeat="rankFilter in rankFilterArr">{{rankFilter}}</li>
+                  </ul>
+                </div>
+                <div class="iss__home-hero-intro iss__network-hero-intro" ng-if="searchResultsArr.length != 0">
+                    {{searchResultsArr.length}} search result(s) containing the following: 
+                    <ul class="iss__network-filter-list mt-3">
+                      <li class="iss__network-filter-list--item" ng-repeat="countryFilter in countryFilterArr">{{countryFilter}}</li>
+                      <li class="iss__network-filter-list--item" ng-repeat="serviceFilter in serviceFilterArr">{{serviceFilter}}</li>
+                      <li class="iss__network-filter-list--item" ng-repeat="rankFilter in rankFilterArr">{{rankFilter}}</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="iss__network-results-cont">
+          <div class="iss__network-result" ng-repeat="searchResult in searchResultsArr | orderBy: 'Name'">
+            <ul class="iss__network-result-list">
+              <li class="iss__network-result-list--item">{{searchResult.Name}}</li>
+              <li class="iss__network-result-list--item">{{searchResult.Country}}</li>
+              <li class="iss__network-result-list--item">{{searchResult.ServiceLine}}</li>
+              <li class="iss__network-result-list--item">{{searchResult.Rank}}</li>
+            </ul>
+            <a href="mailto:{{searchResult.Email}}" class="iss__network-result-email-link"><img src="https://sites.ey.com/sites/EMEIAFSOLearningEvents/insuranceshowcase/SiteAssets/web-assets/assets/img/email.png" alt="" class="iss__network-result-email-img"></a>
+          </div>
+          <!-- <div class="iss__network-result">
+            <ul class="iss__network-result-list">
+              <li class="iss__network-result-list--item">Name</li>
+              <li class="iss__network-result-list--item">Country</li>
+              <li class="iss__network-result-list--item">Service line</li>
+              <li class="iss__network-result-list--item">Rank</li>
+            </ul>
+            <a href="mailto:email@email.com" class="iss__network-result-email-link"><img src="https://sites.ey.com/sites/EMEIAFSOLearningEvents/insuranceshowcase/SiteAssets/web-assets/assets/img/email.png" alt="" class="iss__network-result-email-img"></a>
+          </div>
+          <div class="iss__network-result">
+            <ul class="iss__network-result-list">
+              <li class="iss__network-result-list--item">Name</li>
+              <li class="iss__network-result-list--item">Country</li>
+              <li class="iss__network-result-list--item">Service line</li>
+              <li class="iss__network-result-list--item">Rank</li>
+            </ul>
+            <a href="mailto:email@email.com" class="iss__network-result-email-link"><img src="https://sites.ey.com/sites/EMEIAFSOLearningEvents/insuranceshowcase/SiteAssets/web-assets/assets/img/email.png" alt="" class="iss__network-result-email-img"></a>
+          </div>
+          <div class="iss__network-result">
+            <ul class="iss__network-result-list">
+              <li class="iss__network-result-list--item">Name</li>
+              <li class="iss__network-result-list--item">Country</li>
+              <li class="iss__network-result-list--item">Service line</li>
+              <li class="iss__network-result-list--item">Rank</li>
+            </ul>
+            <a href="mailto:email@email.com" class="iss__network-result-email-link"><img src="https://sites.ey.com/sites/EMEIAFSOLearningEvents/insuranceshowcase/SiteAssets/web-assets/assets/img/email.png" alt="" class="iss__network-result-email-img"></a>
+          </div>
+          <div class="iss__network-result">
+            <ul class="iss__network-result-list">
+              <li class="iss__network-result-list--item">Name</li>
+              <li class="iss__network-result-list--item">Country</li>
+              <li class="iss__network-result-list--item">Service line</li>
+              <li class="iss__network-result-list--item">Rank</li>
+            </ul>
+            <a href="mailto:email@email.com" class="iss__network-result-email-link"><img src="https://sites.ey.com/sites/EMEIAFSOLearningEvents/insuranceshowcase/SiteAssets/web-assets/assets/img/email.png" alt="" class="iss__network-result-email-img"></a>
+          </div>
+          <div class="iss__network-result">
+            <ul class="iss__network-result-list">
+              <li class="iss__network-result-list--item">Name</li>
+              <li class="iss__network-result-list--item">Country</li>
+              <li class="iss__network-result-list--item">Service line</li>
+              <li class="iss__network-result-list--item">Rank</li>
+            </ul>
+            <a href="mailto:email@email.com" class="iss__network-result-email-link"><img src="https://sites.ey.com/sites/EMEIAFSOLearningEvents/insuranceshowcase/SiteAssets/web-assets/assets/img/email.png" alt="" class="iss__network-result-email-img"></a>
+          </div>
+          <div class="iss__network-result">
+            <ul class="iss__network-result-list">
+              <li class="iss__network-result-list--item">Name</li>
+              <li class="iss__network-result-list--item">Country</li>
+              <li class="iss__network-result-list--item">Service line</li>
+              <li class="iss__network-result-list--item">Rank</li>
+            </ul>
+            <a href="mailto:email@email.com" class="iss__network-result-email-link"><img src="https://sites.ey.com/sites/EMEIAFSOLearningEvents/insuranceshowcase/SiteAssets/web-assets/assets/img/email.png" alt="" class="iss__network-result-email-img"></a>
+          </div>
+          <div class="iss__network-result">
+            <ul class="iss__network-result-list">
+              <li class="iss__network-result-list--item">Name</li>
+              <li class="iss__network-result-list--item">Country</li>
+              <li class="iss__network-result-list--item">Service line</li>
+              <li class="iss__network-result-list--item">Rank</li>
+            </ul>
+            <a href="mailto:email@email.com" class="iss__network-result-email-link"><img src="https://sites.ey.com/sites/EMEIAFSOLearningEvents/insuranceshowcase/SiteAssets/web-assets/assets/img/email.png" alt="" class="iss__network-result-email-img"></a>
+          </div>
+          <div class="iss__network-result">
+            <ul class="iss__network-result-list">
+              <li class="iss__network-result-list--item">Name</li>
+              <li class="iss__network-result-list--item">Country</li>
+              <li class="iss__network-result-list--item">Service line</li>
+              <li class="iss__network-result-list--item">Rank</li>
+            </ul>
+            <a href="mailto:email@email.com" class="iss__network-result-email-link"><img src="https://sites.ey.com/sites/EMEIAFSOLearningEvents/insuranceshowcase/SiteAssets/web-assets/assets/img/email.png" alt="" class="iss__network-result-email-img"></a>
+          </div>
+          <div class="iss__network-result">
+            <ul class="iss__network-result-list">
+              <li class="iss__network-result-list--item">Name</li>
+              <li class="iss__network-result-list--item">Country</li>
+              <li class="iss__network-result-list--item">Service line</li>
+              <li class="iss__network-result-list--item">Rank</li>
+            </ul>
+            <a href="mailto:email@email.com" class="iss__network-result-email-link"><img src="https://sites.ey.com/sites/EMEIAFSOLearningEvents/insuranceshowcase/SiteAssets/web-assets/assets/img/email.png" alt="" class="iss__network-result-email-img"></a>
+          </div>
+          <div class="iss__network-result">
+            <ul class="iss__network-result-list">
+              <li class="iss__network-result-list--item">Name</li>
+              <li class="iss__network-result-list--item">Country</li>
+              <li class="iss__network-result-list--item">Service line</li>
+              <li class="iss__network-result-list--item">Rank</li>
+            </ul>
+            <a href="mailto:email@email.com" class="iss__network-result-email-link"><img src="https://sites.ey.com/sites/EMEIAFSOLearningEvents/insuranceshowcase/SiteAssets/web-assets/assets/img/email.png" alt="" class="iss__network-result-email-img"></a>
+          </div>
+          <div class="iss__network-result">
+            <ul class="iss__network-result-list">
+              <li class="iss__network-result-list--item">Name</li>
+              <li class="iss__network-result-list--item">Country</li>
+              <li class="iss__network-result-list--item">Service line</li>
+              <li class="iss__network-result-list--item">Rank</li>
+            </ul>
+            <a href="mailto:email@email.com" class="iss__network-result-email-link"><img src="https://sites.ey.com/sites/EMEIAFSOLearningEvents/insuranceshowcase/SiteAssets/web-assets/assets/img/email.png" alt="" class="iss__network-result-email-img"></a>
+          </div>
+          <div class="iss__network-result">
+            <ul class="iss__network-result-list">
+              <li class="iss__network-result-list--item">Name</li>
+              <li class="iss__network-result-list--item">Country</li>
+              <li class="iss__network-result-list--item">Service line</li>
+              <li class="iss__network-result-list--item">Rank</li>
+            </ul>
+            <a href="mailto:email@email.com" class="iss__network-result-email-link"><img src="https://sites.ey.com/sites/EMEIAFSOLearningEvents/insuranceshowcase/SiteAssets/web-assets/assets/img/email.png" alt="" class="iss__network-result-email-img"></a>
+          </div>
+          <div class="iss__network-result">
+            <ul class="iss__network-result-list">
+              <li class="iss__network-result-list--item">Name</li>
+              <li class="iss__network-result-list--item">Country</li>
+              <li class="iss__network-result-list--item">Service line</li>
+              <li class="iss__network-result-list--item">Rank</li>
+            </ul>
+            <a href="mailto:email@email.com" class="iss__network-result-email-link"><img src="https://sites.ey.com/sites/EMEIAFSOLearningEvents/insuranceshowcase/SiteAssets/web-assets/assets/img/email.png" alt="" class="iss__network-result-email-img"></a>
+          </div> -->
+        </div>
+        </div>
+    </div> 
+</div>

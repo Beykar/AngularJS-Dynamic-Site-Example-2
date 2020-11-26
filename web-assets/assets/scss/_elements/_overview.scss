@@ -1,0 +1,321 @@
+.iss__home-wrapper{
+
+    .iss__home-hero-overlay{
+        position: absolute;
+        background-color:$eyOffBlackOpac;
+        top: 0;
+        left: 0;
+        z-index: 10;
+        width: 100%;
+        height: 100%;
+    }
+
+    .iss_overview-hero-cont{
+        position: relative;
+        z-index: 50;
+    }
+    
+    .iss_overview-hero-header{
+        margin-bottom: 0;
+    }
+
+    .iss__overview-header-span{
+        text-transform: capitalize;
+    }
+
+    .iss_overview-hero-sub-header{
+        color: $white;
+    }
+
+    .iss__register-cont{
+        width: 16rem;
+        background-color: $eyYellow;
+        border: 2px solid $eyYellow;
+        padding: .7rem 1rem;
+        border-radius: 5px;
+        font-family: EYInterstate-Bold, sans-serif;
+    }
+
+    .iss_register-button{
+        @include fontSize(20px);
+        width: 100%;
+        text-decoration: none;
+
+        &:hover{
+            color: $eyYellow;
+            .iss__register-cont{
+                background-color: $eyOffBlack;
+                color: $eyYellow;
+                border: 2px solid $eyYellow;
+            }
+        }
+       
+    }
+
+    .iss__calendar-cont{
+        position: relative;
+        z-index: 50;
+        width: 95%;        
+        
+        @include mq ($from: desktopMid){
+            padding-right: 2rem;
+            height: 24rem;
+            overflow-y: scroll; 
+        }
+    }
+
+    .iss__session-cont{
+        position: relative;
+        z-index: 50;
+        margin: 3rem 0 0 2rem;
+        padding-bottom: 2rem;
+        border-bottom: 1px solid white;
+        display: flex;
+        flex-wrap: wrap;
+
+        @include mq($from: desktop){
+            flex-wrap: nowrap;
+        }     
+    }
+
+    .iss__date-cont{
+        flex-basis: 100%;
+        @include mq($from: tablet){
+            flex-basis: 24%;
+            margin-right: 1%;
+        } 
+    }
+
+    .iss__session-desc-cont{
+        padding-left: 35px;
+        border-left: 5px solid transparent;
+        flex-basis: 100%;
+        @include mq($from: tablet){
+            flex-basis: 75%;
+        } 
+    }
+
+    .iss__date-header{
+        font-family: EYInterstate-Bold, sans-serif;
+        color: $white;
+    }
+    .iss__timings-list{
+        list-style: none;
+        padding-left: 0;
+        margin-top: 30px;
+        
+        &--item{
+            @include fontSize(18px);
+            font-family: EYInterstate-Regular, sans-serif;
+        }
+    }
+
+    .iss__section-desc-header-list{
+        list-style: none;
+        padding-left: 0;
+        
+        color: $white;
+
+        @include mq($from: desktopMid){
+            display: flex;
+
+            &--item{
+                position: relative;
+                flex-basis: 30%;
+                margin-right: 40px;
+                // &:not(:first-child){
+                //     padding-top: 7px;
+                // }
+            }
+        }
+        
+    }
+
+    .iss__session-details-list{
+        list-style: none;
+        padding-left: 0;
+        margin-top: 1rem;
+
+        @include mq($from: desktopMid){
+            display: flex;
+            flex-wrap: nowrap;
+
+            &--item{
+                position: relative;
+                flex-basis: 31%;
+                margin-right: 1%;
+            }
+        }   
+    }
+
+    .iss__calendar-section-link, .iss__session-details-link{
+        text-decoration: none;
+        color: $white;
+        margin: auto;
+    }
+
+    .iss__calendar-section-link:hover{
+        font-family: EYInterstate-Bold, sans-serif;
+        color: $eyYellow;
+        .iss__angle-right-overview-top{
+            right: -20px;
+        }
+    }
+
+    .iss__session-details-link:hover{
+        font-family: EYInterstate-Bold, sans-serif;
+        color: $eyYellow; 
+        .iss__session-span{
+            display: none;
+        }
+        .iss__session-span-hover{
+            display: inline-block;
+        }
+    }
+
+    .iss__session-desc-para{
+        @include fontSize(18px);
+    }
+
+    .iss__calendar-section-icon{
+        width: 25px;
+        margin-right: 10px;
+    }
+
+    .iss__angle-right-overview-top{
+        position: relative;
+        color: $eyYellow;
+        right: -10px;
+        top: 5px;
+        transition: .5s;
+    }
+
+    .iss__angle-right-overview-bottom{
+        position: relative;
+        color: $eyYellow;
+        right: -10px;
+        top: 6px;
+        transition: .7s;
+    }
+
+    .iss__session-span{
+        display: inline;
+        transition: .7s;
+    }
+
+    .iss__session-span-hover{
+        color: $eyYellow;
+        font-family: EYInterstate-Bold, sans-serif;
+        position: relative;
+        top: 1px;
+        display: none;
+        transition: .7s;
+    }
+
+    .iss__overview-popup-header{
+        margin-bottom: 2rem;
+        color: $white;
+    }
+
+    .iss__overview-pop-title{
+        margin-bottom: 1rem;
+        color: $white;
+    }
+
+    .iss__facilitators-tab-cont{
+        margin-top: 3rem;
+    }
+
+    .iss__facilitators-tab-list{
+        display: flex;
+        justify-content: flex-start;
+
+        &--item{
+            flex-grow: 1;
+            border: 1px solid $eySharkGrey;
+            border-radius: 5px;
+        }
+    }
+
+    .iss__facilitator-heading-list{
+        list-style: none;
+        padding: 0;
+
+        &--item{
+            color: $white;
+            &:first-child{
+                @include fontSize(36px);
+            }
+        }
+    }
+
+    .iss__facilitators-tab-pane{
+        border: 1px solid $eySharkGrey;
+        border-radius: 5px;
+        padding: 2rem;
+    }
+
+    .iss__facilitators-tap-pane-para{
+        display: flex;
+        flex-wrap: wrap;
+
+        @include mq($from: tablet){
+            flex-wrap: nowrap;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+    }
+
+    .iss__facilitators-img-cont{
+        flex-basis: 90%;
+        margin: auto;
+        margin-top: 1.5rem;
+
+        @include mq($from: tablet){
+            flex-basis: 25%; 
+            margin-right: 3%;
+            margin-bottom: .5rem;
+            height: 50%;
+        }       
+    }
+
+    .iss__facilitator-img{
+        width: 100%;
+    }
+
+    .iss__facilitator-bio{
+        flex-basis: 90%;
+        margin: auto;
+        
+        @include mq($from: tablet){
+            flex-basis: 67%; 
+        }      
+    }
+
+    .iss__strategic-themes-list{
+        margin-top: 1rem;
+        list-style: none;        
+        padding-left: 0;
+        width: 100%;        
+
+        @include mq($from: desktopMid){
+            display: flex;
+            flex-wrap: nowrap;
+            justify-content: space-between;
+        }
+
+        &--item{
+            display: flex;
+        }
+    }
+
+    .iss__strategic-cont{
+        width: 15px;
+        height: 15px;
+        margin-right: 5px;
+        position: relative;
+        top: 2px;
+    }
+    
+    
+}

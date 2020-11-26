@@ -1,0 +1,122 @@
+<div class="iss__home-wrapper" ng-controller="overviewCtrl">
+    <section class="iss__home-hero-section">
+        <div class="iss__home-hero-overlay"></div>
+        <div class="iss__home-hero-cont iss_overview-hero-cont">
+            <h1 class="iss__home-hero-header iss_overview-hero-header"><span class="iss__overview-header-span">{{overview.week}}</span> overview</h1>
+            <h3 class="iss_overview-hero-sub-header" ng-if="overview.week == 'week 1'">2-5 November</h3>
+            <h3 class="iss_overview-hero-sub-header" ng-if="overview.week == 'week 2'">9-12 November</h3>
+            <ul class="iss__strategic-themes-list">
+                <li class="iss__strategic-themes-list--item"><div class="iss__strategic-cont repositioning"></div> Reframing Insurance</li>
+                <li class="iss__strategic-themes-list--item"><div class="iss__strategic-cont transformation"></div> Transformation</li>
+                <li class="iss__strategic-themes-list--item"><div class="iss__strategic-cont enterprise"></div> Enterprise Risk and Controls</li>
+            </ul>
+        </div>
+        <div class="iss__calendar-cont">
+            <div class="iss__session-cont" ng-repeat="session in sessionsArr | orderBy : 'RealDate'">
+                <div class="iss__date-cont">
+                    <h4 class="iss__date-header">{{session.Date|date:"EEEE d MMM"}}</h4>
+                    <ul class="iss__timings-list">
+                        <li class="iss__timings-list--item">{{session.Start}}</li>
+                        <li class="iss__timings-list--item">{{session.End}}</li>
+                    </ul>                   
+                </div>
+                <div class="iss__session-desc-cont" ng-style="{'border-color': session.Color}">
+                    <div class="iss__session-desc-header">
+                        <ul class="iss__section-desc-header-list">
+                            <li class="iss__section-desc-header-list--item">
+                                <h4 class="iss__date-header">{{session.Name}}</h4>
+                            </li>
+                            <li ng-if="session.CalendarLink != null" class="iss__section-desc-header-list--item">
+                                <a href="{{session.CalendarLink}}" target="_blank" class="iss__calendar-section-link">
+                                <img src="https://sites.ey.com/sites/EMEIAFSOLearningEvents/insuranceshowcase/SiteAssets/web-assets/assets/img/calendar.png" alt="" class="iss__calendar-section-icon">Add to calendar<i class="fa fa-angle-right fa-2x  iss__angle-right-overview-top" aria-hidden="true"></i></a></li>
+                            <li ng-if="session.VideoLink != null" class="iss__section-desc-header-list--item">
+                                <a href="{{session.VideoLink}}" target="_blank" class="iss__calendar-section-link">
+                                <img src="https://sites.ey.com/sites/EMEIAFSOLearningEvents/insuranceshowcase/SiteAssets/web-assets/assets/img/video.png" alt="" class="iss__calendar-section-icon">Join the session<i class="fa fa-angle-right fa-2x  iss__angle-right-overview-top" aria-hidden="true"></i></a></li>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="iss__session-desc-para" ng-bind-html="session.Description">
+                    </div>
+                    <ul class="iss__session-details-list">
+                        <li ng-if="session.FacilitatorsDetails.length != 0" class="iss__session-details-list--item iss__speaker-list-item">
+                            <a ng-click="showFacilitators(session.Name, session.FacilitatorsDetails)" class="iss__session-details-link iss__facilitator-link" popup>
+                            <img src="https://sites.ey.com/sites/EMEIAFSOLearningEvents/insuranceshowcase/SiteAssets/web-assets/assets/img/user.png" alt="" class="iss__calendar-section-icon iss__session-speaker-icon">
+                            <span class="iss__session-span">Facilitators</span>
+                            <span class="iss__session-span-hover">View facilitators</span>
+                            <i class="fa fa-angle-right fa-2x  iss__angle-right-overview-bottom" aria-hidden="true"></i>
+                            </a>
+                        </li>
+                        <li ng-if="session.KeyTakeaways != null" class="iss__session-details-list--item iss__resource-list-item">
+                            <a ng-click="showTakeaways(session.Name, session.KeyTakeaways)" class="iss__session-details-link iss__takeway-link" popup>
+                            <img src="https://sites.ey.com/sites/EMEIAFSOLearningEvents/insuranceshowcase/SiteAssets/web-assets/assets/img/target.png" alt="" class="iss__calendar-section-icon iss__session-takeaway-icon">
+                            <span class="iss__session-span">Key takeaways</span>
+                            <span class="iss__session-span-hover">View key takeaways</span>
+                            <i class="fa fa-angle-right fa-2x  iss__angle-right-overview-bottom" aria-hidden="true"></i>
+                            </a>
+                        </li>  
+                        <li ng-if="session.Resources != null" class="iss__session-details-list--item iss__resource-list-item">
+                            <a ng-click="showResources(session.Name, session.Resources)" class="iss__session-details-link iss__resources-link" popup>
+                            <img src="https://sites.ey.com/sites/EMEIAFSOLearningEvents/insuranceshowcase/SiteAssets/web-assets/assets/img/folder.png" alt="" class="iss__calendar-section-icon iss__session-resource-icon">
+                            <span class="iss__session-span">Resources</span>
+                            <span class="iss__session-span-hover">View resources</span>
+                            <i class="fa fa-angle-right fa-2x  iss__angle-right-overview-bottom" aria-h idden="true"></i></a>
+                        </li>  
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="iss__popup-cont iss__popup-facilitators" popup>
+        <a href="" class="iss__popup-close-link">
+            <img src="https://sites.ey.com/sites/EMEIAFSOLearningEvents/insuranceshowcase/SiteAssets/web-assets/assets/img/close-icon.png" alt="" class="iss__popup-close-icon">
+        </a>
+        <div class="iss__popup-para">
+            <h2 class="iss__overview-popup-header">{{sessionName}}</h2>
+            <h1 class="iss__overview-pop-title">Facilitators</h1> 
+            <div class="iss__facilitators-tab-cont" show-pane>          
+                <ul class="nav iss__facilitators-tab-list" role="tab-list" tab-clicked>  
+                    <li ng-repeat="facilitator in speakerArr" class="iss__facilitators-tab-list--item"><a href="#tab-content-{{facilitator.ID}}" class="iss__facilitators-tab-link nav-link active" data-toggle="tab" active-tab>
+                        <ul class="iss__facilitator-heading-list">
+                        <li class="iss__facilitator-heading-list--item">{{facilitator.Name}}</li>
+                        <li class="iss__facilitator-heading-list--item">{{facilitator.Title}}</li>
+                        </ul>
+                    </a></li>
+                </ul>                      
+            </div>           
+            <div id="facilitators-tab-content" class="iss__facilitators-tab-content tab-content slide-left">
+                <div class="iss__facilitators-tab-pane tab-pane fade show" ng-repeat="facilitator in speakerArr" id="tab-content-{{facilitator.ID}}" show-pane>
+                        <div class="iss__facilitators-tap-pane-para">
+                            <div class="iss__facilitators-img-cont">
+                                <img ng-if="facilitator.Image == null" src="https://sites.ey.com/sites/EMEIAFSOLearningEvents/insuranceshowcase/SiteAssets/web-assets/assets/img/silhouette.png" alt="" class="iss__facilitator-img">
+                                <img src="{{facilitator.Image}}" alt="" class="iss__facilitator-img">
+                            </div>                        
+                            <div class="iss__facilitator-bio" ng-bind-html="facilitator.Bio">
+                            </div>
+                        </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="iss__popup-cont iss__popup-takeway" popup>
+        <a href="" class="iss__popup-close-link">
+            <img src="https://sites.ey.com/sites/EMEIAFSOLearningEvents/insuranceshowcase/SiteAssets/web-assets/assets/img/close-icon.png" alt="" class="iss__popup-close-icon">
+        </a>
+        <div class="iss__popup-para">
+            <h2 class="iss__overview-popup-header">{{sessionName}}</h2>
+            <h1 class="iss__overview-pop-title">Takeaway Notes</h1>
+            <div class="iss__overview-popup-cont" ng-bind-html="keyTakeways">
+            </div>
+        </div>
+    </div>
+    <div class="iss__popup-cont iss__popup-resources" popup>
+        <a href="" class="iss__popup-close-link">
+            <img src="https://sites.ey.com/sites/EMEIAFSOLearningEvents/insuranceshowcase/SiteAssets/web-assets/assets/img/close-icon.png" alt="" class="iss__popup-close-icon">
+        </a>
+        <div class="iss__popup-para">
+            <h2 class="iss__overview-popup-header">{{sessionName}}</h2>
+            <h1 class="iss__overview-pop-title">Resources</h1>
+            <div class="iss__overview-popup-cont" ng-bind-html="resources">
+            </div>
+        </div>
+    </div>  
+</div>

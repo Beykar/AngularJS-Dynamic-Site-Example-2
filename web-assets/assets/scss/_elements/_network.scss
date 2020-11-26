@@ -1,0 +1,171 @@
+.iss__home-wrapper{
+
+    .iss__network-hero-section{
+        padding-left: 2rem !important;
+    }
+
+    .iss__network-hero-intro{
+        @include fontSize(16px);
+        font-family: EYInterstate-Light, sans-serif;
+    }
+
+    .iss__network-filter-cont{
+        position: relative;
+        z-index: 99; 
+        padding: 2rem 0 5rem;
+    }
+
+    .iss__network-angle-right{
+        @include fontSize(32px);
+        font-weight: bold;
+        // transform: rotate(90deg);
+    }
+
+    .rotated{
+        transform: rotate(90deg);
+    }
+
+    .iss__network-card, .iss__network-input-group-text{
+        background-color: transparent;
+        border: none;
+    }
+
+    .iss__network-card--header{
+        color: $eyYellow;
+    }
+
+    .iss__network-card--link{
+        text-decoration: none;
+        color: $eyYellow;
+        font-family: EYInterstate-Regular, sans-serif;
+        @include fontSize(26px);
+        display: flex;
+    }
+
+    .iss__network-card-title{
+        margin:-5px 15px 0 0;
+    }
+
+
+    .iss__network-card-body{
+        display: flex;
+        flex-wrap: wrap;
+        //justify-content: space-between;
+    }
+
+    .iss__network-input-group{
+        flex-basis: 80%;
+        margin-bottom: 5px !important;
+
+        @include mq($from: midMobile){
+            flex-basis: 40%;
+        }
+
+        @include mq($from: tablet){
+            flex-basis: 23%;
+        }
+
+        &--country{
+            @extend .iss__network-input-group;
+            @include mq($from: desktopMid){
+                flex-basis: 20%;
+            }
+        }
+
+        &--rank{
+            @extend .iss__network-input-group;
+            @include mq($from: desktopMid){
+                flex-basis: 24%;
+            }
+        }
+
+        
+    }
+
+    input[type=checkbox] {
+        transform: scale(1.2);
+        -ms-transform: scale(1.2);
+        -webkit-transform: scale(1.2);
+        padding: 10px;
+
+        &:checked{
+            color: $eyOffBlack !important;
+            background-color: $eyYellow !important;
+        }
+    }
+
+
+    .iss__network-search-btn{
+        position: absolute;
+        bottom: .5rem;
+        left: 2rem;
+        width: 7rem;
+        text-align: center;
+        background: $eyYellow;
+        color: $eyOffBlack;
+        padding: 10px;
+        border-radius: 5px;
+        border: 1px solid $eyYellow;
+
+        &:hover{
+            background: $eyOffBlack;
+        }
+    }
+
+    .iss__network-popup-cont{
+        padding-top: 3rem !important;
+    }
+
+    .iss__network-results-cont{
+        margin: 2rem 0 0 2rem;
+        display: flex;
+        flex-wrap: wrap;
+        height: 30rem;
+        overflow-y: scroll;        
+    }
+
+    .iss__network-result{
+        flex-basis: 90%;
+        position: relative;
+        border-bottom: 1px solid $white;
+        margin-top: 25px;
+
+        @include mq($from: tablet){
+            flex-basis: 30%;
+        }
+
+        @include mq($from: desktop){
+            flex-basis: 24%;
+            padding-left: 35px;
+            &:nth-child(4n + 1){
+                padding-left: 0;
+            }
+
+            // IE only
+            @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+               flex-basis: 22%;
+           } 
+           
+        }
+    }
+
+    .iss__network-result-list{
+        padding-left: 0;
+        list-style: none;
+
+        &--item{
+            @include fontSize(16px);
+        }
+    }
+
+    .iss__network-result-email-link{
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+
+    .iss__network-result-email-img{
+        width: 25px;
+    }
+
+}

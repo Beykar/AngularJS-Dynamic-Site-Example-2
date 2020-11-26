@@ -1,0 +1,25 @@
+<div class="iss__home-wrapper" ng-controller="homeCtrl">
+    <section class="iss__home-hero-section">
+        <div class="iss__home-hero-cont">
+            <h1 class="iss__home-hero-header">{{welcomeData.Title}}</h1>
+            <div class="iss_home-hero-para">
+                <div class="iss__home-hero-intro" ng-bind-html="welcomeData.IntroMessage">
+                </div>
+                <a href="" class="iss__home-readmore" popup>Read more...</a>
+            </div>
+            <h3 class="iss__home-hero-sub-header">Agenda</h3>
+            <ul class="iss__home-overview-list">
+                <li class="iss__home-overview-list--item"><a ui-sref="overview({week: 'week 1'})" class="iss__home-overview-link">Week 1 overview<span class="iss__home-ellipses">...</span><i class="fa fa-angle-right fa-2x iss__angle-right-home" aria-hidden="true"></i></a></li>
+                <li class="iss__home-overview-list--item"><a ui-sref="overview({week: 'week 2'})" class="iss__home-overview-link">Week 2 overview<span class="iss__home-ellipses">...</span><i class="fa fa-angle-right fa-2x iss__angle-right-home" aria-hidden="true"></i></a></li>
+            </ul>
+        </div>        
+    </section>
+    <div class="iss__popup-cont" popup>
+        <a href="" class="iss__popup-close-link">
+            <img src="https://sites.ey.com/sites/EMEIAFSOLearningEvents/insuranceshowcase/SiteAssets/web-assets/assets/img/close-icon.png" alt="" class="iss__popup-close-icon">
+        </a>
+        <div class="iss__popup-para" ng-bind-html="$sce.trustAsHtml(welcomeData.FullMessage)">
+        </div>
+    </div>     
+</div>
+   

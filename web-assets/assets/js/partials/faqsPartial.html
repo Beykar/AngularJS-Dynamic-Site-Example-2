@@ -1,0 +1,59 @@
+<div class="iss__home-wrapper" ng-controller="faqsCtrl">
+        <section class="iss__home-hero-section">
+        <div class="iss__home-hero-overlay"></div>
+        <div class="iss__home-hero-cont iss_overview-hero-cont">
+            <h1 class="iss__home-hero-header iss_overview-hero-header">FAQs</h1>
+        </div>
+        <div class="iss_home-hero-para">
+            <div class="iss__home-hero-intro row">
+                <div class="accordion iss__accordion mt-5 col-11 mx-auto" id="iss-faq-accordion">
+                    <div class="card" ng-repeat="faq in faqsArr">
+                        <div class="card-header iss__accordion-card-header" id="heading-{{faq.ID}}">
+                        <h2 class="mb-0">
+                            <a class="btn btn-link btn-block text-left iss__accordion-link" type="button" data-toggle="collapse" data-target="#collapse-{{faq.ID}}" aria-expanded="true" aria-controls="collapse-{{faq.ID}}" rotate>
+                                {{faq.Question}}
+                            <i class="fa fa-angle-right fa-2x iss__accordion-angle-right" aria-hidden="true"></i>
+                            </a>
+                        </h2>
+                        </div>
+                    
+                        <div id="collapse-{{faq.ID}}" class="collapse" aria-labelledby="heading-{{faq.ID}}" data-parent="#iss-faq-accordion">
+                        <div class="card-body iss__accordion-card-body" ng-bind-html="faq.Answer">
+                        </div>
+                        </div>
+                    </div>
+                    <!-- <div class="card">
+                        <div class="card-header iss__accordion-card-header" id="headingTwo">
+                        <h2 class="mb-0">
+                            <a class="btn btn-link btn-block text-left iss__accordion-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo" rotate>
+                            Question 2
+                            <i class="fa fa-angle-right fa-2x iss__accordion-angle-right" aria-hidden="true"></i>
+                            </a>
+                        </h2>
+                        </div>
+                        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#iss-faq-accordion">
+                            <div class="card-body iss__accordion-card-body">
+                                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header iss__accordion-card-header" id="headingThree">
+                        <h2 class="mb-0">
+                            <a class="btn btn-link btn-block text-left iss__accordion-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree" rotate>
+                            Question 3
+                            <i class="fa fa-angle-right fa-2x iss__accordion-angle-right" aria-hidden="true"></i>
+                            </a>
+                        </h2>
+                        </div>
+                        <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#iss-faq-accordion">
+                            <div class="card-body iss__accordion-card-body">
+                                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                            </div>
+                        </div>
+                    </div> -->
+                    </div>
+            </div>
+        </div>
+    </section>
+</div>
